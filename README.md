@@ -144,6 +144,7 @@ document.body.appendChild(tree)
 - Views are just functions that return a DOM tree of elements.
   They are passed the current state, the previous state, and a
   callback function that can be used to change the state.
+- `1.js`
 
 ---
 ### Running the app
@@ -205,6 +206,7 @@ const view = (state, prev, send) => {
 - Immutability makes a copy, alters it, returns the copy
 - Allows us to compare state over time
 - Try it out! Woah!
+- `2.js`
 
 ---
 ### Adding items
@@ -229,10 +231,6 @@ const view = (state, prev, send) => {
 ```
 
 Yikes...
-
-???
-
-- Notice it doesn't reset the text in your input
 
 ---
 ### Adding items
@@ -259,6 +257,11 @@ const view = (state, prev, send) => {
 ```
 
 Ah, that's better.
+
+???
+
+- Notice it doesn't reset the text in your input
+- `3.js`
 
 ---
 ### Completion status
@@ -327,6 +330,8 @@ const view = (state, prev, send) => {
 
 - You'll notice, though, that adding new items resets the checkboxes
   because checking them doesn't do anything
+- `4.js`
+
 ---
 ### Completion status
 
@@ -389,6 +394,7 @@ app.model({
   making a copy and returning it
 - Now your app maintains completed state, but refreshing
   will lose all items
+- `5.js`
 
 ---
 ### Effects
@@ -502,6 +508,7 @@ localStorage.todos = '[{"title": "Test", "completed": false}]'
 ???
 
 - Now we'll trigger `getTodos` when our view is rendered
+- `6.js`
 
 ---
 ### Effects
@@ -578,6 +585,7 @@ app.model({
 - When you call `send` it looks for reducers _and_ effects by that name,
   so our view should already be wired up.
 - You should not be able to add items, mark them complete, and refresh
+- `7.js`
 
 ---
 ### This presentation
